@@ -1,0 +1,13 @@
+{
+    "events" : {
+        "return_work" : {
+            "day" : 90,
+            "adjust_p_contamination" : {
+                "religion" : 0.0,
+                "school" : 0.0,
+                "transport" : 0.09,
+                "work" : 0.3
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+
+# =============================================================
+# Criado por Paulo H. Lopes 2020
+# =============================================================
+
+novaDescoberta = {
+	# =============================================================
+	# Dados Demográficos - Dados de 2010-2017
+	'regiao': 'sul',				# Zona ao qual o bairro pertence
+	'tamPop': 12312,					# Tamanho da população
+	'tamFisico': 158.8,				# Área do bairro em Hectare
+	'densidadeDemografica': 77.52,		# Densidade demografica (Hab/km²)
+	'numDomicilio': 3744,				# Numero de domicilios
+	'domicilio': {'casa': 63.7, 'apartamento': 14.1, 'comodo':0.13, 'casa de vila ou condominio': 16.69,  'outro': 5.37},
+	'idade': [1075, 1425, 2576, 1701, 2134, 1333, 1107, 568, 393],  # Vetor de dados, cada posição é referente a um tipo de dado ->['0-9','10-19','20-29','30-39','40-49','50-59','60-69','70-79','80-']
+	'renda': [0.61, 3.29, 13.35, 28.87, 23.45, 8.73, 10.39, 7.08, 2.54, 1.68, 0], # Vetor de dados, cada posição é referente a um tipo de dado ->[Até 1/8 de SM, Mais de 1/8 a 1/4 de SM, Mais de 1/4 a 1/2 SM, Mais de 1/2 a 1 SM, Mais de 1 a 2 SM, Mais de 2 a 3 SM, Mais de 3 a 5 SM, Mais de 5 a 10 SM, Mais de 10 SM, Sem rendimento, Sem declaração]
+	'esgoto': {'existe': 45.55, 'naoExiste': 54.45},	# Porcentagem de esgoto a céu aberto
+	
+	# =============================================================
+	# Dados Hospitalares Públicos
+	'hospitais': 'vazio',				# Numero de Hospitais, Unidade de pronto atendimento e Unidade básica de saude
+	'leitos': 'vazio',			# Numero de leitos dos hospitais
+	'uti': 'vazio',				# Número de UTIS do bairro
+	'doencasCronicas': 'vazio',	# Numero de pessoas com doenças cronicas
+	
+	# =============================================================
+	# Dados Escolares
+	'escolas': {'municipal':2, 'estadual': 2, 'federal':0, 'particular': 0},	# Número de escolas
+	'mediaFuncEscola': 'vazio',		# Média de funcionários das escolas
+	'mediaAlunosEscola': {'municipal':603, 'estadual': 283, 'particular': 974},	# Número de escolas	# Média de Alunos por escolas
+}

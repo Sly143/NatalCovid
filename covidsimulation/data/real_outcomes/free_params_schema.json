@@ -1,0 +1,6 @@
+{
+    "param0" : {
+        "scale" : 1.0,
+        "path" : ["epidemy", "p_contamination"]
+    } 
+}

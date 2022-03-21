@@ -1,0 +1,28 @@
+{
+    "english": {
+        "infected": "Infected",
+        "days": "Days",
+        "deaths_per_day": "Deaths per day",
+        "deaths_accumulated": "Deaths accumulated",
+        "icus": "ICUs",
+        "icu": "ICU",
+        "positives_accumulated": "Positives accumulated",
+        "respirators": "Respirators",
+        "percentage_infected": "% infected",
+        "graph": "graph",
+        "connections of layer": "Connections of layer"
+    },
+    "portugues": {
+        "infected":"Infectados",
+        "days":"Dias",
+        "deaths_per_day": "Mortes por dia",
+        "deaths_accumulated": "Mortes acumuladas",
+        "icus": "UTIS",
+        "icu": "UTI",
+        "positives_accumulated": "Positivos acumulados",
+        "respirators": "Respiradores",
+        "percentage_infected": "% de identificados",
+        "graph": "grafico",
+        "connections of layer": "Conexões da camada"
+    } 
+}

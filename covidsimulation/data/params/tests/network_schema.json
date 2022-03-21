@@ -1,0 +1,21 @@
+{
+    "age_range" : ["0-9", "10-19", "20-29", "30-39", "40-49", "50-59", "60-69", "70-79", "80-"],
+    "population" : [
+        {
+            "agent" : {
+                "age" : 0,
+                "health_outcome" : 3,
+                "incubation_time" : 5,
+                "network" : {
+                    "home" : [1, 2, 3],
+                    "work" : [1, 2, 3],
+                    "school" : [1, 2, 3],
+                    "religion" : [1, 2, 3],
+                    "transport" : [1, 2, 3],
+                    "random" : [1, 2, 3]
+                }
+            }
+        },
+        {}
+    ]
+}

@@ -1,0 +1,226 @@
+{
+    "initial_p_contamination": {
+        "scale": 1.0,
+        "path": [
+            "epidemy",
+            "p_contamination"
+        ]
+    },
+    "initial_infected": {
+        "scale": 100,
+        "path": [
+            "epidemy",
+            "initial_infected"
+        ]
+    },
+    "event_0_day": {
+        "scale": 177,
+        "path": [
+            "events",
+            "event_0",
+            "day"
+        ]
+    },
+    "event_0_external_contacts": {
+        "scale": 100,
+        "path": [
+            "events",
+            "event_0",
+            "external_contacts"
+        ]
+    },
+    "event_0_religion": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_0",
+            "adjust_p_contamination",
+            "religion"
+        ]
+    },
+    "event_0_school": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_0",
+            "adjust_p_contamination",
+            "school"
+        ]
+    },
+    "event_0_transport": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_0",
+            "adjust_p_contamination",
+            "transport"
+        ]
+    },
+    "event_0_work": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_0",
+            "adjust_p_contamination",
+            "work"
+        ]
+    },
+    "event_0_home": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_0",
+            "adjust_p_contamination",
+            "home"
+        ]
+    },
+    "event_0_random": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_0",
+            "adjust_p_contamination",
+            "random"
+        ]
+    },
+    "event_1_day": {
+        "scale": 177,
+        "path": [
+            "events",
+            "event_1",
+            "day"
+        ]
+    },
+    "event_1_external_contacts": {
+        "scale": 100,
+        "path": [
+            "events",
+            "event_1",
+            "external_contacts"
+        ]
+    },
+    "event_1_religion": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_1",
+            "adjust_p_contamination",
+            "religion"
+        ]
+    },
+    "event_1_school": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_1",
+            "adjust_p_contamination",
+            "school"
+        ]
+    },
+    "event_1_transport": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_1",
+            "adjust_p_contamination",
+            "transport"
+        ]
+    },
+    "event_1_work": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_1",
+            "adjust_p_contamination",
+            "work"
+        ]
+    },
+    "event_1_home": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_1",
+            "adjust_p_contamination",
+            "home"
+        ]
+    },
+    "event_1_random": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_1",
+            "adjust_p_contamination",
+            "random"
+        ]
+    },
+    "event_2_day": {
+        "scale": 177,
+        "path": [
+            "events",
+            "event_2",
+            "day"
+        ]
+    },
+    "event_2_external_contacts": {
+        "scale": 100,
+        "path": [
+            "events",
+            "event_2",
+            "external_contacts"
+        ]
+    },
+    "event_2_religion": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_2",
+            "adjust_p_contamination",
+            "religion"
+        ]
+    },
+    "event_2_school": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_2",
+            "adjust_p_contamination",
+            "school"
+        ]
+    },
+    "event_2_transport": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_2",
+            "adjust_p_contamination",
+            "transport"
+        ]
+    },
+    "event_2_work": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_2",
+            "adjust_p_contamination",
+            "work"
+        ]
+    },
+    "event_2_home": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_2",
+            "adjust_p_contamination",
+            "home"
+        ]
+    },
+    "event_2_random": {
+        "scale": 1.0,
+        "path": [
+            "events",
+            "event_2",
+            "adjust_p_contamination",
+            "random"
+        ]
+    }
+}

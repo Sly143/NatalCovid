@@ -1,0 +1,55 @@
+{
+    "dr_luiz_antonio": {
+        "icu_Ocuped": 17,
+        "uci_Ocuped": 0,
+        "icu_Available": 3,
+        "uci_Available": 0,
+        "blocked": 0,
+        "neighborhood":"quintas"
+    },
+
+    "municipal_Natal": {
+        "icu_Ocuped": 13,
+        "uci_Ocuped": 15,
+        "icu_Available": 1,
+        "uci_Available": 1,
+        "blocked": 22,
+        "neighborhood":"petropolis"
+    },
+
+    "central_coronel_pedro_germano": {
+        "icu_Ocuped": 10,
+        "uci_Ocuped": 10,
+        "icu_Available": 0,
+        "uci_Available": 2,
+        "blocked": 3,
+        "neighborhood":"tirol"
+    },
+
+    "rio_grande": {
+        "icu_Ocuped": 6,
+        "uci_Ocuped": 0,
+        "icu_Available": 0,
+        "uci_Available": 0,
+        "blocked": 3,
+        "neighborhood":"tirol"
+    },
+
+    "campanha_Covid19": {
+        "icu_Ocuped": 4,
+        "uci_Ocuped": 3,
+        "icu_Available": 0,
+        "uci_Available": 0,
+        "blocked": 3,
+        "neighborhood":"pontaNegra"
+    },
+
+    "giselda_trigueiro": {
+        "icu_Ocuped": 11,
+        "uci_Ocuped": 0,
+        "icu_Available": 11,
+        "uci_Available": 0,
+        "blocked": 0,
+        "neighborhood":"quintas"
+    }
+}

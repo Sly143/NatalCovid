@@ -1,0 +1,13 @@
+[run]
+branch = True
+source = .
+
+[report]
+exclude_lines =
+    if __name__ == .__main__.:
+    pragma: no cover
+ignore_errors = True
+omit =
+    covidsimulation/data/*
+    covidsimulation/analysis/*
+    covidsimulation/tests/*

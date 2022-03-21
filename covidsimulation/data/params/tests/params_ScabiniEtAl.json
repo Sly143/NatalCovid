@@ -1,0 +1,65 @@
+{
+    "population" : {
+        "population_total" : 87338, 
+        "outcome_distributions" : {
+            "age_range" : ["0-9", "10-19", "20-29", "30-39", "40-49", "50-59", "60-69", "70-79", "80-"], 
+            "age_distribution": [0.1489, 0.18, 0.1851, 0.1508, 0.1305, 0.0864, 0.0607, 0.0359, 0.0217],
+            "p_dead" : [0.0000161,0.0000695,0.000309,0.000844,0.00161,0.00595,0.0193,0.0428,0.0780],
+            "p_hospital" : [0.00161,0.00408,0.0104,0.0343,0.0425,0.0816,0.118,0.166,0.184],
+            "p_ICU" : [0.000483,0.001224,0.00312,0.01029,0.01275,0.02448,0.0354,0.0498,0.0552],
+            "p_asymptomatic" : [0.299517, 0.298776, 0.29688, 0.28970999999999997, 0.28725, 0.27552, 0.2646, 0.2502, 0.24480000000000002],
+            "p_symptomaticLight" : [0.299517, 0.298776, 0.29688, 0.28970999999999997, 0.28725, 0.27552, 0.2646, 0.2502, 0.24480000000000002],
+            "p_symptomaticMedium" : [0.39935600000000004, 0.39836800000000006, 0.39584, 0.38628, 0.383, 0.36736, 0.3528, 0.3336, 0.3264]
+        },
+        "network" : {
+            "home" : {
+                "size" : [1, 10],
+                "exposed_hours_per_week" : 21.0,
+                "p_family_size" : [0.12, 0.22, 0.25, 0.21, 0.11, 0.05, 0.02, 0.01, 0.005, 0.005]
+            },
+            "work" : {
+                "size" : [5, 30],
+                "exposed_hours_per_week" : 40.0,
+                "average_num_contacts" : 3,
+                "included_groups" : [false, false, true, true, true, true, true, false, false]
+            },
+            "transport" : {
+                "size" : [10, 40],
+                "exposed_hours_per_week" : 8.4,
+                "average_num_contacts" : 8,
+                "percentage_included" : 0.5
+            },
+            "school" : {
+                "size" : [16, 30],
+                "exposed_hours_per_week" : 20.0,
+                "average_num_contacts" : 5,
+                "included_groups" : [true, true, false, false, false, false, false, false, false]
+            },
+            "religion" : {
+                "size" : [10, 100],
+                "exposed_hours_per_week" : 2.0,
+                "average_num_contacts" : 6,
+                "percentage_included" : 0.4
+            },
+            "random" : {
+                "size" : 5,
+                "exposed_hours_per_week" : 1.0,
+                "average_num_contacts" : 1
+            }
+        }
+    },
+    "epidemy" : {
+        "p_contamination" : 0.3,
+        "t_incubation" : [1.6094379124341003, 0.41871033485818504], 
+        "t_discharge" : [14, 28, 22],
+        "t_hospital" : 7,
+        "initial_infected": 20
+    },
+    "events" : {
+
+    },
+    "sim" : {
+        "seed" : null,
+        "days" : 300
+    }
+}

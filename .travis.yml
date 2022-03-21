@@ -1,0 +1,8 @@
+language: python
+install:
+  - pip install pandas jsonmerge numba 
+  - pip install matplotlib
+  - pip install coverage codecov
+script: coverage run -m pytest
+after_success:
+  - codecov -t $CODECOV_TOKEN

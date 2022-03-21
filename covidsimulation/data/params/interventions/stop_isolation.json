@@ -1,0 +1,13 @@
+{
+    "events" : {
+        "stop_isolation" : {
+            "day" : 90,
+            "adjust_p_contamination" : {
+                "religion" : 0.3,
+                "school" : 0.3,
+                "transport" : 0.3,
+                "work" : 0.3
+            }
+        }
+    }
+}
