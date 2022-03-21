@@ -31,7 +31,6 @@ class Home(NetworkLayer):
             self.size[1],
             self._choosePFamily
         )
-
     def getPInteraction(self, agent):
         return self.p_interaction
 
@@ -41,5 +40,4 @@ class Home(NetworkLayer):
 
     def _choosePFamily(self, group_sizes):
         return np.random.choice(group_sizes, p=self.p_family_size)
-
 

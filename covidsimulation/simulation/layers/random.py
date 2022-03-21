@@ -1,5 +1,5 @@
 from covidsimulation.simulation.layers.layer import NetworkLayer, chooseUniform
-
+from covidsimulation.data.natal import degreeNeighborhood
 LAYER_KEY = 'random'
 
 class Random(NetworkLayer):
@@ -14,8 +14,8 @@ class Random(NetworkLayer):
 
         # calculate interaction probability as it is fixed
         # group factor is 1 because random is 1-1 interaction 
-        self.p_interaction = self._calculateInteractionProbability(exposed_hours_per_week, 1)
-
+        self.p_interaction = self._calculateInteractionProbabilityPerNeighborhood(exposed_hours_per_week, 1)
+        
     def fromParams(self, population):
 
         # create network
@@ -28,3 +28,4 @@ class Random(NetworkLayer):
 
     def chooseContacts(self, agent):
         return chooseUniform(self.nodes[agent], self.average_num_contacts)
+    

@@ -39,7 +39,8 @@ class COVIDSimulation:
         self.t_discharge = epidemy_params['t_discharge']
         self.t_hospital = epidemy_params['t_hospital']
         self.initial_infected = epidemy_params['initial_infected']
-
+        self.sameNeighborhoodProbabilityInteraction = epidemy_params['sameNeighborhoodProbabilityInteraction']
+        
         # intervention params
         self.events = []
         if 'events' in params: # check optional parameter exists 
@@ -57,6 +58,7 @@ class COVIDSimulation:
             # outcome distribution params
             outcome_distributions = population_params['outcome_distributions']
             self.age_range = outcome_distributions['age_range']
+            
             ages = np.random.choice(
                     len(outcome_distributions['age_distribution']),
                     size=self.population_total,
@@ -71,11 +73,18 @@ class COVIDSimulation:
                 ages, 
                 outcome_distributions)
 
+            neighborhood = np.random.choice(
+                    len(population_params['p_population_neighborhood']),
+                    size=self.population_total,
+                    p=population_params['p_population_neighborhood']
+                )
+
             # network params and population
             self.population = self._createPopulation(
                 ages,
                 health_outcomes,
-                incubation_times)
+                incubation_times,
+                neighborhood)
 
             # initialise/generate network from parameters
             self.network.fromParams(self.population)
@@ -102,7 +111,9 @@ class COVIDSimulation:
                         agent_entry['age_group'],
                         agent_entry['health_outcome'],
                         agent_entry['incubation_time'],
+                        agent_entry['neighborhood']
                     )
+
                 self.population.append(agent)
 
                 # add agent to network
@@ -124,10 +135,11 @@ class COVIDSimulation:
         '''
         steps = 0
         first_case = False
+        # sameNeighborhoodProbabilityInteraction = 5
         while (not first_case) and steps < limit: 
 
             # Meet people in the same population and between populations
-            self.network.calculateInteractions(self.population, self.p_contamination)
+            self.network.calculateInteractions(self.population, self.p_contamination, self.sameNeighborhoodProbabilityInteraction)
 
             for agent in self.population:
                 # Update disease state machine for each agent
@@ -145,16 +157,21 @@ class COVIDSimulation:
 
         # Start data tracking
         data = DataCollector(self.days) 
-
+        
         # Run simulation
         for current_day in range(self.days):
+            
+            print("Day:[{}]".format(current_day+1))
+                        
+            # for layer in self.network.layers:
+            #     print(layer.name, layer.p_contamination)
             
             # determine if any event triggers occur
             for event in self.events:
                 event.checkAndApply(current_day+1, self)
             
             # Meet people in the same population and between populations
-            self.network.calculateInteractions(self.population, self.p_contamination)
+            self.network.calculateInteractions(self.population, self.p_contamination, self.sameNeighborhoodProbabilityInteraction)
 
             for agent in self.population:
                 # Update disease state machine for each agent
@@ -162,7 +179,7 @@ class COVIDSimulation:
 
             # Store data for this day
             data.collect(self.population)
-
+        
         return data
 
     def _assignHealthOutcomes(self, ages, outcome_params):
@@ -175,28 +192,25 @@ class COVIDSimulation:
             pp[1] = outcome_params['p_symptomaticLight'][i]
             pp[2] = outcome_params['p_symptomaticMedium'][i]
             pp[5] = outcome_params['p_dead'][i]
-            pp[3] = outcome_params['p_hospital'][i] - pp[5]
-            pp[4] = outcome_params['p_ICU'][i] - pp[3] - pp[5]
+            pp[4] = outcome_params['p_ICU'][i]
+            pp[3] = outcome_params['p_hospital'][i] - pp[4] - pp[5]
             if (pp[4] < 0): # TODO can this happen, can we clarify the above or make it something we check is true in the parameters instead?
                 pp[4] = 0.0
-
             # randomly assign a health outcome to all the population in this age category
             match_age = ages == i
             data_health_outcomes[match_age] = np.random.choice(health_states.health_outcomes, size=np.sum(match_age), p=pp)
-        
+            # print(data_health_outcomes[match_age])
         return data_health_outcomes
 
-    def _createPopulation(self, ages, outcomes, incubations):
+    def _createPopulation(self, ages, outcomes, incubations, neighborhood):
 
         population = []
-
         # create agents
         for i in range(self.population_total):
             population.append(
                 Agent(ages[i], 
                     outcomes[i], 
-                    incubations[i]))
-
+                    incubations[i],
+                    neighborhood[i]))
+        
         return population
-    
-

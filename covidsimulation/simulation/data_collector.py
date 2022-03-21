@@ -1,5 +1,6 @@
 import numpy as np
 import covidsimulation.common.health_states as health_states
+import covidsimulation.common.layers as layers
 
 def countHealthStates(population):
     '''
@@ -9,6 +10,13 @@ def countHealthStates(population):
     for p in population:
         count_states[p.health_state] += 1
     return count_states
+
+def countHealth_stateStats(population):
+    '''
+    returns the count of health state by each people
+    '''
+    for p in population:
+        p.health_stateStats[p.health_state] += 1
 
 def countConfirmedCases(population):
     '''
@@ -20,11 +28,24 @@ def countConfirmedCases(population):
             total += 1
     return total
 
+def countInfectedByLayer(population):
+    '''
+    returns the number of people infected in each layers as a list
+    '''
+    count_states = [0] * (layers.NUM_INTERNAL_STATES)
+    for p in population:
+        count_states[p.dayInfected] += 1
+    return count_states
+
+
 class DataCollector(object):
 
     def __init__(self, days):
         self.health_states = []
         self.confirmed_cases = []
+        self.infectedByLayer = []
+        self.health_stateStats = []
+
 
     def collect(self, population):
         '''
@@ -32,6 +53,9 @@ class DataCollector(object):
         '''
         self.health_states.append(countHealthStates(population))
         self.confirmed_cases.append(countConfirmedCases(population))
+        self.infectedByLayer.append(countInfectedByLayer(population))
+        
+        # self.health_stateStats.append(countHealth_stateStats(population))
 
     def serialiseOutput(self):
         '''
@@ -65,6 +89,11 @@ class DataCollector(object):
                     'days_exposed': agent.days_exposed,
                     'days_with_symptoms':agent.days_with_symptoms,
                     'health_state':agent.health_state,
+                    'health_stateStats':agent.health_stateStats,
+                    'neighborhood' : agent.neighborhood,
+                    'agentLayers' : agent.agentLayers,
+                    'getInfectedInLayer': agent.getInfectedInLayer,
+                    'infectedByLayer': agent.dayInfected,
                     'network' : network
                 }
             else:
@@ -72,6 +101,11 @@ class DataCollector(object):
                     'age_group' : int(agent.age_group), # numpy type cannot be serialised
                     'health_outcome' : agent.health_outcome,
                     'incubation_time' : agent.incubation_time,
+                    'neighborhood' : agent.neighborhood,
+                    'agentLayers' : agent.agentLayers,
+                    'getInfectedInLayer': agent.getInfectedInLayer,
+                    'infectedByLayer': agent.dayInfected,
+                    'health_stateStats':agent.health_stateStats,
                     'network' : network
                 }
             # add to output data
@@ -89,6 +123,19 @@ class DataCollector(object):
         The number of tested and confirmed cases accumulated for each day
         '''
         return self.confirmed_cases
+ 
+    def getInfectedByLayerCases(self):
+        '''
+        The number of infected by each layer; for each day
+        '''
+        return self.infectedByLayer
     
+    
+    def getHealthStateStats(self):
+        '''
+        The agents each health state number of days
+        '''
+        return self.health_stateStats
+
     def getDeaths(self):
         return [ day[health_states.dead] for day in self.health_states]
