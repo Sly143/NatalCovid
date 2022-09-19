@@ -16,7 +16,9 @@ The algorithm consists of a cycle for one day. The cycle contains two parts: com
 - For testing `pip install pytest coverage`:
     - pytest: For system and unit tests
     - coverage: Generate code coverage reports 
-
+- For optimization:`pip install pyswarms` and `pip install deap`:
+    - yswarms: PSO
+    - deap: evolutionary computation framework
 # Project Structure
 
 - `covidsimulation` is the root of project code (the interface will be described below in inputs/outputs)
